@@ -1,0 +1,90 @@
+1. Pertama bandingkan elemen yang akan dicari dengan elemen akar pohon.
+   Jika root cocok dengan elemen target, maka kembalikan lokasi node.
+   Jika tidak cocok, maka periksa apakah item tersebut kurang dari elemen root, jika lebih kecil dari elemen root,
+   kemudian pindah ke subtree kiri.
+   Jika lebih besar dari elemen root, maka pindah ke subpohon kanan.
+   Ulangi prosedur di atas secara rekursif sampai ditemukan kecocokan.
+   Jika elemen tidak ditemukan atau tidak ada di pohon, maka kembalikan NULL.
+
+   Search (root,item)
+   Step 1 - if (item = root -> data) or (root = NULL)
+   return root
+   else if (them < root -> data)
+   return Search(root-> left,item)
+   else
+   return Search(root -> right,item)
+   END if
+   Step 2 - END
+
+   Elemen Data : 5376, 5647, 6384, 6536, 6538, 7362, 8824
+   (Note : Lebih kecil = Kanan, Lebih besar = Kiri).
+   5376 = Root
+   5647 = Lebih besar, jadi ke kiri
+   6384 = Lebih besar, jadi ke kiri
+   6536 = Lebih besar, jadi ke kiri (SIGRA)
+   6538 = Lebih besar, jadi ke kiri
+   7362 = Lebih besar, jadi ke kiri
+   8824 = Lebih besar, jadi ke kiri
+   Pada level 4 data dengan nama SIGRA ditemukan.
+
+2. P = 5
+   a = 2, 18, 1, 0, 56, 76, 98, 12
+   quick (a, 0, 5-1) --> quick (a, 0, 4)
+   int p = partition
+
+   Pivot = a [end] --> Pivot [4]
+   Pivot = 56
+
+   i = (start-1)--> i = -1
+   for (j = 0; j < = 4)
+
+   J = 0
+   if (a [j] < 56) --> if (a [0] < 56)
+   i = i+1 --> i = 0
+   int t = a [i] --> t = a [0]
+   t = 2
+   a [i] = a [j] --> a [0] = a [j]
+   a [0] = 2
+   a [j] = t --> a [0] = 2
+
+   [a = 2, 18, 1, 0, 56, 76, 98, 12]
+
+   J = 1
+   if (a [j] < 56) --> if (a [1] < 56)
+   i = i + 1 --> i = 1
+   int t = a [i] --> t = a [1]
+   t = 18
+   a [i] = a [j] --> a [1] = a [j] --> a [1] = 18
+   a [j] = t --> a [1] = 18
+
+   [a = 2, 18, 1, 0, 56, 76, 98, 12]
+
+   J = 2
+   if (a [j] < 56) --> if (a [2] < 56)
+   i = i + 1 --> i = 2
+   int t = a [i] --> t = a [2]
+   t = 1
+   a [i] = a [j] --> a [2] = a [j] --> a [2] = 1
+   a [j] = t --> a [2] = 1
+
+   [a = 2, 18, 1, 0, 56, 76, 98, 12]
+
+   J = 3
+   if (a [j] < 56) --> if (a [3] < 56)
+   i = i + 1 --> i = 3
+   int t = a [i] --> t = a [3]
+   t = 0
+   a [i] = a [j] --> a [3] = a [j] --> a [3] = 0
+   a [j] = t --> a [3] = 0
+
+   [a = 2, 18, 1, 0, 56, 76, 98, 12]
+
+   J = 4
+   if (a [j] < 56) --> if (a [4] < 56)
+   i = i+1 --> i = 4
+   int t = a [i] --> t = a [4]
+   t = 56
+   a [i] = a [j] --> a [4] = a [j] --> a [4] = 56
+   a [j] = t --> a [4] = 56
+
+   [a = 2, 18, 1, 0, 56, 76, 98, 12]
